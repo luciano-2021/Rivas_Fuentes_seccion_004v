@@ -1,0 +1,124 @@
+<ion-header>
+    <ion-toolbar color="secondary">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/" text="" color="primary" mode="ios"></ion-back-button>
+        </ion-buttons>
+        <ion-title text-center>Agendar Servicio</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+
+
+    <ion-list>
+
+        <ion-title color="dark"> Tipo Servicio</ion-title>
+        <br>
+        <ion-item>
+            <ion-label>Cambiar anticongelante</ion-label>
+            <ion-checkbox color="primary"></ion-checkbox>
+        </ion-item>
+        <br>
+        <ion-item>
+            <ion-label>Cambiar freón</ion-label>
+            <ion-checkbox color="primary"></ion-checkbox>
+        </ion-item>
+        <br>
+        <ion-item>
+            <ion-label>Cambio liquido de frenos</ion-label>
+            <ion-checkbox color="primary"></ion-checkbox>
+        </ion-item>
+        <br>
+        <ion-item>
+            <ion-label>Mantención</ion-label>
+            <ion-checkbox color="primary"></ion-checkbox>
+        </ion-item>
+        <br>
+
+                    
+
+    </ion-list>
+
+            <ion-title color="dark"> Fecha y Hora</ion-title>
+            <br>
+
+            <ion-item>
+                <ion-label>Día / Mes</ion-label>
+                <ion-datetime displayFormat="D MMM " value="2005-06-17T11:06Z" monthValues="8,9,10"></ion-datetime>
+            </ion-item>
+            <br>
+            <ion-item>
+                <ion-label>Hora:</ion-label>
+                <ion-datetime displayFormat="HH:mm" value="2005-06-17T11:06Z" minuteValues="0,15,30,45"></ion-datetime>
+            </ion-item>
+            <br>
+            <ion-title color="dark"> Datos de Contacto</ion-title>
+            <br>
+            <ion-item>
+                <ion-label position="floating">Ingrese sus Nombres: </ion-label>
+                <ion-input type="text" required></ion-input>
+            </ion-item>
+            <br>
+            <ion-item>
+                <ion-label position="floating">Ingrese sus Apellidos: </ion-label>
+                <ion-input type="text" required></ion-input>
+            </ion-item>
+            <br>
+            <ion-item>
+                <ion-label position="floating">Fono: </ion-label>
+                <ion-input type="number" required value="9"></ion-input>
+            </ion-item>
+            <br>
+
+        <form #formulario="ngForm" (ngSubmit)="onSubmit()">
+
+            <ion-list-header>
+                <ion-label>Formulario Válido: {{formulario.valid}} </ion-label>
+              </ion-list-header>
+          
+              <ion-item>
+                <ion-label>Email: </ion-label>
+                <ion-input type="email" placeholder="Email"
+                           name="email" [(ngModel)]= "usuario.email"
+                           pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                           required>
+                </ion-input>
+              </ion-item>
+          
+              <ion-item>
+                <ion-label>Password: </ion-label>
+                <ion-input type="password" placeholder="Contraseña"
+                           name="password" [(ngModel)]= "usuario.password"
+                           required>
+                </ion-input>
+              </ion-item>
+                        
+           
+
+            <ion-button color="success" [disabled]="formulario.invalid" type="submit" expand="block" routerLink="/inicio">
+                Enviar
+            </ion-button>
+
+        </form>
+
+    <div id="footer">
+        <a href="https://www.whatsapp.com" target="_blank">
+            <ion-icon style="font-size: 24px;" color="success" name="logo-whatsapp"></ion-icon>
+        </a>
+        <a href="https://twitter.com" target="_blank">
+            <ion-icon style="font-size: 24px;" color="secondary" name="logo-twitter"></ion-icon>
+        </a>
+        <a href="https://es-la.facebook.com" target="_blank">
+            <ion-icon style="font-size: 24px;" color="secondary" name="logo-facebook"></ion-icon>
+        </a>
+        <a href="https://www.youtube.com" target="_blank">
+            <ion-icon style="font-size: 24px;" color="tertiary" name="logo-youtube"></ion-icon>
+        </a>
+
+    </div>
+
+
+</ion-content>
